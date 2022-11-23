@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dry Ben</title>
+</head>
+<body background="D:/Shubham Sirsat/AWS/ML_model_deployment/images/Screenshot (154).png">
+    <h1>Dry been Predictor</h1>
+
+    <form method="post" action="/predict">
+
+        <label>Class (7)Types : 'CALI', 'DERMASON', 'BARBUNYA', 'SEKER', 'SIRA', 'HOROZ', 'BOMBAY'</label>
+<hr>
+        <b><label>Area</label>
+        <input type = 'text' placeholder="Range 20420 - 254616" name="area">
+
+        <b><label>Perimeter</label><b>
+        <input type = 'text' placeholder="Range 524 - 1985" name="perimeter"><br><br>
+
+        <label>Major axis length </label><br>
+        <input type = 'text' placeholder="Range 183 - 738" name="majot_axis_length"><br><br>
+
+        <label>Minor axis length </label><br>
+        <input type = 'text' placeholder="Range 122 - 460" name="minor_axis_length"><br><br>
+
+        <label>Aspect ratio</label><br>
+        <input type = 'text' placeholder="Range 1 - 2.5" name="aspect_ratio"><br><br>
+
+        <label>Eccentricity</label><br>
+        <input type = 'text' placeholder="Range 0.21 - 0.91" name="eccentricity"><br><br>
+
+        <label>Convex area</label><br>
+        <input type = 'text' placeholder="Range 20684 - 263261" name="convex_area"><br><br>
+
+        <label>Equivalent diameter</label><br>
+        <input type = 'text' placeholder="Range 161 - 570" name="equivalent_diameter"><br><br>
+
+        <label>Extent</label><br>
+        <input type = 'text' placeholder="Range 0.5 - 0.88" name="extent"><br><br>
+
+        <label>Solidity</label><br>
+        <input type = 'text' placeholder="Range 0.9 - 0.999" name="solidity"><br><br>
+
+        <label>Roundness</label><br>
+        <input type = 'text' placeholder="Range 0.48 - 0.99" name="roundness"><br><br>
+
+        <label>Compactness</label><br>
+        <input type = 'text' placeholder="Range 0.64 - 0.99" name="compactness"><br><br>
+
+        <label>ShapeFactor1 (SF1)</label><br>
+        <input type = 'text'placeholder="Range 0.002778 - 0.010451" name="sf1"><br><br>
+
+        <label>ShapeFactor1 (SF2)</label><br>
+        <input type = 'text' placeholder="Range 0.000567 - 0.003665" name="sf2"><br><br>
+
+        <label>ShapeFactor1 (SF3)</label><br>
+        <input type = 'text' placeholder="Range 0.416499 - 0.974767" name="sf3"><br><br>
+
+        <label>ShapeFactor1 (SF4)</label><br>
+        <input type = 'text' placeholder="Range 0.947687 - 0.999733" name="sf4"><br><br>
+
+        <input type="submit" value="Predict"><br><br>
+
+
+     </form>
+    {% if result %}
+            <p>{{ result }}</p>
+        {% endif %}
+</body>
+</html>
