@@ -1,0 +1,13 @@
+
+
+https://dev.to/awscommunity-asean/sql-based-inserts-deletes-and-upserts-in-s3-using-aws-glue-3-0-and-delta-lake-42f0
+
+---------------------++++++++++++++++++++++++++___________________-------------
+
+https://aws.amazon.com/blogs/big-data/implement-a-cdc-based-upsert-in-a-data-lake-using-apache-iceberg-and-aws-glue/
+
++++++++++++++++_________-----------------------------+++++++++++================
+
+Alter table tblstudent alter column address nvarchar(1500)
+
++++++++++++++++-------------------------------++++++++++++++++++=========

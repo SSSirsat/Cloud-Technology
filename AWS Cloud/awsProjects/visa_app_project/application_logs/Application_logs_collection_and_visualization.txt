@@ -1,0 +1,10 @@
+Visa - App Project
+
+Important links
+----------------------------------------------------------------------
+1)Create tables in AWS Athena and Glue data catalouge.
+- https://docs.aws.amazon.com/athena/latest/ug/cloudtrail-logs.html
+
+2) Architecture for applicatin log data collection and visualization.
+- https://aws.amazon.com/blogs/big-data/power-operational-insights-with-amazon-quicksight/
+
