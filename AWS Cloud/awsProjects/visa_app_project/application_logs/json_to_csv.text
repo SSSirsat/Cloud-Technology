@@ -1,0 +1,52 @@
+import json
+import boto3
+
+def lambda_handler(event, context):
+    # Load the event payload
+    payload = json.loads(event)
+    
+    # Transform the payload into a format compatible with Athena
+    transformed_payload = transform_payload(payload)
+    
+    # Convert the transformed payload to CSV format
+    csv_data = convert_to_csv(transformed_payload)
+    
+    # Save the CSV data to S3
+    s3_bucket = 'your-s3-bucket'
+    s3_key = 'output/data.csv'
+    save_to_s3(csv_data, s3_bucket, s3_key)
+    
+    return {
+        'statusCode': 200,
+        'body': 'Data transformed and saved to S3'
+    }
+
+def transform_payload(payload):
+    # Perform the necessary transformations on the payload
+    # to make it compatible with Athena queries
+    transformed_payload = {
+        'engine': payload['engine'],
+        'instanceID': payload['instanceID'],
+        'timestamp': payload['timestamp'],
+        'cpuUtilization_idle': payload['cpuUtilization']['idle'],
+        'cpuUtilization_user': payload['cpuUtilization']['user'],
+        'loadAverage_one': payload['loadAverageMinute']['one'],
+        'loadAverage_five': payload['loadAverageMinute']['five'],
+        'loadAverage_fifteen': payload['loadAverageMinute']['fifteen'],
+        # Include other relevant fields from the payload
+    }
+    
+    return transformed_payload
+
+def convert_to_csv(data):
+    # Convert the transformed data into a CSV string
+    csv_header = ','.join(data.keys())
+    csv_values = ','.join(str(value) for value in data.values())
+    csv_data = f'{csv_header}\n{csv_values}'
+    
+    return csv_data
+
+def save_to_s3(data, bucket, key):
+    # Save the data as a CSV file in the specified S3 bucket
+    s3 = boto3.client('s3')
+    s3.put_object(Body=data, Bucket=bucket, Key=key)

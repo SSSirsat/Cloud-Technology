@@ -7,4 +7,17 @@ Important links
 
 2) Architecture for applicatin log data collection and visualization.
 - https://aws.amazon.com/blogs/big-data/power-operational-insights-with-amazon-quicksight/
+- https://docs.aws.amazon.com/firehose/latest/dev/create-name.html
 
+
+
+
+3) Issue Tracker
+- https://bournteco365.sharepoint.com/sites/PAECollaboration/Lists/Issue%20tracker%20list/DispForm.aspx?ID=58&e=FFQHN9&OR=Teams-HL&CT=1683546699342&clickparams=eyJBcHBOYW1lIjoiVGVhbXMtRGVza3RvcCIsIkFwcFZlcnNpb24iOiIyNy8yMzA0MDIwMjcwNSIsIkhhc0ZlZGVyYXRlZFVzZXIiOmZhbHNlfQ%3D%3D
+
+
+================================================================================================================================================================
+[May 12, 2023, 7:57 PM] Padhi, Shubhranshu: Team, I would require to convert cloud watch logs file,  from multiline json format to a single line json format file, by using lambda.
+
+workflow(cloudwatch > kinesis > lambda > s3)
+this is required format that we need to query the data in Athena.
